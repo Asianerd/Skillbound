@@ -1,4 +1,8 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -6,28 +10,45 @@ namespace Skillbound
 {
     public class Main : Game
     {
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        public static GraphicsDeviceManager Graphics;
+        public static SpriteBatch spriteBatch;
+        public static Vector2 screenSize = new Vector2(1920, 1080);
+
+        public delegate void GameEvents();
+        public static GameEvents UpdateEvent;
+        public static GameEvents DrawEvent;
 
         public Main()
         {
-            _graphics = new GraphicsDeviceManager(this);
+            Graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            Graphics.PreferredBackBufferWidth = (int)screenSize.X;
+            Graphics.PreferredBackBufferHeight = (int)screenSize.Y;
             IsMouseVisible = true;
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            Input.Initialize(new List<Keys>()
+            {
+                Keys.W,
+                Keys.A,
+                Keys.S,
+                Keys.D,
+                Keys.Space
+            });
+
+            Entity.Initialize();
+            Player.Initialize(Content.Load<Texture2D>("Player/body"));
+            Camera.Initialize(); // Must be init after player
 
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
         protected override void Update(GameTime gameTime)
@@ -35,7 +56,10 @@ namespace Skillbound
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            if(UpdateEvent != null)
+            {
+                UpdateEvent();
+            }
 
             base.Update(gameTime);
         }
@@ -44,7 +68,16 @@ namespace Skillbound
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            Matrix cameraOffset = Matrix.CreateTranslation(new Vector3(Camera.Instance.offset, 0f));
+            spriteBatch.Begin(
+                samplerState: SamplerState.PointClamp,
+                transformMatrix:cameraOffset
+                );
+            if (DrawEvent != null)
+            {
+                DrawEvent();
+            }
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
