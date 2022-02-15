@@ -16,7 +16,9 @@ namespace Skillbound
             Tile.Initialize(final);
             tiles = new List<Tile>()
             {
-                new Tile(Tile.TileType.Default, new Rectangle(100, 0, 500, 500))
+                new Tile(
+                    new Rectangle(-100, 64, 500, 500)
+                    )
             };
 
             Main.DrawEvent += DrawTiles;
@@ -61,6 +63,18 @@ namespace Skillbound
                 }
             }
             return false;
+        }
+
+        public static Tile GetCollidedTile(Rectangle rect)
+        {
+            foreach(Tile x in tiles)
+            {
+                if (x.rect.Intersects(rect))
+                {
+                    return x;
+                }
+            }
+            return null;
         }
     }
 }

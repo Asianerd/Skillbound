@@ -60,17 +60,20 @@ namespace Skillbound
 
         public virtual void Draw()
         {
-            Main.spriteBatch.Draw(sprite, rect, onGround ? Color.Red : Color.White);
+            Main.spriteBatch.Draw(sprite, rect, Color.White);
         }
 
         public virtual void PhysicsChecks()
         {
-            onGround = Map.CollideTiles(new Rectangle(rect.X, rect.Bottom, rect.Width, 20));
+            onGround = Map.CollideTiles(new Rectangle(rect.X, rect.Bottom, rect.Width, 5));
         }
 
         public virtual void Move()
         {
-
+            if(onGround)
+            {
+                velocity.Y = 0;
+            }
         }
 
         public virtual void ApplyVelocity()
@@ -86,6 +89,7 @@ namespace Skillbound
                 return;
             }
 
+            // All the code below runs if there was something in the way when moving
             for (int i = 0; i <= 10; i++)
             {
                 Rectangle withoutY = new Rectangle(new Point(
@@ -94,7 +98,50 @@ namespace Skillbound
                 if (!Map.CollideTiles(withoutY))
                 {
                     rect = withoutY;
-                    //velocity.X = 0;
+                }
+            }
+            if((int)velocity.X > 0)
+            {
+                // Right
+                // Crap-ton of checks, i know
+                Rectangle blockCheck = new Rectangle(rect.Right, rect.Y, 5, rect.Height);
+                if (Map.CollideTiles(blockCheck))
+                {
+                    // if theres blockage on the right
+                    Map_objects.Tile collision = Map.GetCollidedTile(blockCheck);
+                    if (collision != null) // just gotta make sure
+                    {
+                        Rectangle heightCheck = new Rectangle(newRect.X, rect.Y, rect.Width, 5);
+                        if (!Map.CollideTiles(heightCheck))
+                        {
+                            Rectangle spaceCheck = new Rectangle(newRect.X, collision.rect.Y - rect.Height, rect.Width, rect.Height);
+                            if (!Map.CollideTiles(spaceCheck))
+                            {
+                                rect = spaceCheck;
+                            }
+                        }
+                    }
+                }
+            }
+            else if ((int)velocity.X < 0)
+            {
+                // Left
+                Rectangle blockCheck = new Rectangle(rect.X - 5, rect.Y, 5, rect.Height);
+                if (Map.CollideTiles(blockCheck))
+                {
+                    Map_objects.Tile collision = Map.GetCollidedTile(blockCheck);
+                    if (collision != null)
+                    {
+                        Rectangle heightCheck = new Rectangle(newRect.X, rect.Y, rect.Width, 5);
+                        if (!Map.CollideTiles(heightCheck))
+                        {
+                            Rectangle spaceCheck = new Rectangle(newRect.X, collision.rect.Y - rect.Height, rect.Width, rect.Height);
+                            if (!Map.CollideTiles(spaceCheck))
+                            {
+                                rect = spaceCheck;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -107,7 +154,6 @@ namespace Skillbound
                 if (!Map.CollideTiles(withoutX))
                 {
                     rect = withoutX;
-                    velocity.Y = 0;
                 }
             }
         }

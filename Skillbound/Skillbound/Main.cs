@@ -26,6 +26,7 @@ namespace Skillbound
 
             Graphics.PreferredBackBufferWidth = (int)screenSize.X;
             Graphics.PreferredBackBufferHeight = (int)screenSize.Y;
+            Graphics.IsFullScreen = true;
             IsMouseVisible = true;
         }
 
@@ -50,6 +51,15 @@ namespace Skillbound
                 Keys.S,
                 Keys.D,
                 Keys.Q,
+                Keys.E,
+                Keys.R,
+                Keys.T,
+                Keys.F,
+                Keys.G,
+                Keys.Z,
+                Keys.X,
+                Keys.C,
+                Keys.V,
                 Keys.Space
             });
 

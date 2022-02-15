@@ -26,7 +26,7 @@ namespace Skillbound.Map_objects
         public Rectangle rect;
         List<Texture2D> slices;
 
-        public Tile(TileType _type, Rectangle _rect)
+        public Tile(Rectangle _rect, TileType _type = TileType.Default)
         {
             type = _type;
             rect = _rect;

@@ -23,6 +23,8 @@ namespace Skillbound
 
         public override void Move()
         {
+            base.Move();
+
             if (onGround)
             {
                 jumpValue.AffectValue(1f);
@@ -68,9 +70,18 @@ namespace Skillbound
 
             if (Input.inputs[Keys.Q].active)
             {
-                Map.tiles.Add(new Map_objects.Tile(Map_objects.Tile.TileType.Default, new Rectangle(
-                    rect.X, rect.Bottom + 10, rect.Width, 40
+                Map.tiles.Add(new Map_objects.Tile(new Rectangle(
+                    rect.X - rect.Width, rect.Bottom, rect.Width * 3, 40
                     )));
+                /*for(int i = 0; i <= 100; i++)
+                {
+                    Map.tiles.Add(new Map_objects.Tile(new Rectangle(
+                        rect.Right + (i * 40),
+                        rect.Y - ((i-1) * 40),
+                        300,
+                        40
+                        )));
+                }*/
             }
         }
     }
