@@ -4,10 +4,26 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/background.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/1.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/2.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/3.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/4.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/5.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/6.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/7.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/8.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/9.png</File>
     <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Player/body.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

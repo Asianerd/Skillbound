@@ -1,2 +1,11 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/1.png","D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/bin/Windows/Content/Map/default/1.xnb","TextureProcessor","Texture2DContent",92,101,0.117046
+"D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/2.png","D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/bin/Windows/Content/Map/default/2.xnb","TextureProcessor","Texture2DContent",94,101,0.0009813
+"D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/3.png","D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/bin/Windows/Content/Map/default/3.xnb","TextureProcessor","Texture2DContent",93,101,0.1180429
+"D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/4.png","D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/bin/Windows/Content/Map/default/4.xnb","TextureProcessor","Texture2DContent",91,101,0.0013433
+"D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/5.png","D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/bin/Windows/Content/Map/default/5.xnb","TextureProcessor","Texture2DContent",91,101,0.0014015
+"D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/6.png","D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/bin/Windows/Content/Map/default/6.xnb","TextureProcessor","Texture2DContent",91,101,0.0010276
+"D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/7.png","D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/bin/Windows/Content/Map/default/7.xnb","TextureProcessor","Texture2DContent",90,101,0.011405
+"D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/8.png","D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/bin/Windows/Content/Map/default/8.xnb","TextureProcessor","Texture2DContent",93,101,0.001137
+"D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/9.png","D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/bin/Windows/Content/Map/default/9.xnb","TextureProcessor","Texture2DContent",90,101,0.0007948
 "D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Player/body.png","D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/bin/Windows/Content/Player/body.xnb","TextureProcessor","Texture2DContent",112,341,0.2214781
