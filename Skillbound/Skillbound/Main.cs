@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Skillbound.Map_objects;
 
 namespace Skillbound
 {
@@ -30,6 +31,18 @@ namespace Skillbound
 
         protected override void Initialize()
         {
+            Dictionary<Tile.TileType, List<Texture2D>> final = new Dictionary<Tile.TileType, List<Texture2D>>();
+            foreach (var _t in Enum.GetValues(typeof(Tile.TileType)).Cast<Tile.TileType>())
+            {
+                List<Texture2D> _textures = new List<Texture2D>();
+                for (int i = 1; i <= 9; i++) // 1-9
+                {
+                    _textures.Add(Content.Load<Texture2D>($"Map/{_t.ToString().ToLower()}/{i}"));
+                }
+                final.Add(_t, _textures);
+            }
+            Map.Initialize(final);
+
             Input.Initialize(new List<Keys>()
             {
                 Keys.W,

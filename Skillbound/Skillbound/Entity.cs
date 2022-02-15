@@ -34,11 +34,10 @@ namespace Skillbound
             }
         }
 
-
-        // public Vector2 position;
         public Rectangle rect;
         public Texture2D sprite;
         public float speed = 10f;
+        public Vector2 velocity = Vector2.Zero;
 
         public Entity(Texture2D _sprite, Rectangle _rect)
         {
@@ -50,12 +49,71 @@ namespace Skillbound
 
         public virtual void Update()
         {
-
+            Move();
+            ApplyVelocity();
+            ApplyFriction();
         }
 
         public virtual void Draw()
         {
-            Main.spriteBatch.Draw(sprite, rect, Color.White);
+            Main.spriteBatch.Draw(sprite, rect, Map.CollideTiles(rect) ? Color.Red : Color.White);
+        }
+
+        public virtual void Move()
+        {
+
+        }
+
+        public virtual void ApplyVelocity()
+        {
+            /*velocity.Y += 0.01f;*/
+            velocity.Y = Math.Clamp(velocity.Y + 1, -30, 30);
+            //velocity.Y += 1;
+
+
+            Point targetPoint = new Point((int)velocity.X, (int)velocity.Y);
+            Rectangle newRect = new Rectangle(targetPoint + rect.Location, rect.Size);
+
+            if (!Map.CollideTiles(newRect))
+            {
+                rect = newRect;
+                return;
+            }
+
+            for (int i = 0; i <= 10; i++)
+            {
+                Rectangle withoutY = new Rectangle(new Point(
+                    (int)Lerp(rect.X, newRect.X, (i / 10f)),
+                    rect.Y), newRect.Size);
+                if (!Map.CollideTiles(withoutY))
+                {
+                    rect = withoutY;
+                    velocity.X = 0;
+                }
+            }
+
+            for (int i = 0; i <= 10; i++)
+            {
+                Rectangle withoutX = new Rectangle(new Point(
+                    rect.X,
+                    (int)Lerp(rect.Y, newRect.Y, (i / 10f))
+                    ), newRect.Size);
+                if (!Map.CollideTiles(withoutX))
+                {
+                    rect = withoutX;
+                    velocity.Y = 0;
+                }
+            }
+        }
+
+        public virtual void ApplyFriction()
+        {
+            velocity.X *= 0.5f;
+        }
+
+        public static float Lerp(float start, float end, float amount)
+        {
+            return start + ((end - start) * amount);
         }
     }
 }

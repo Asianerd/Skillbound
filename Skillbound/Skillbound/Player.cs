@@ -21,18 +21,15 @@ namespace Skillbound
 
         }
 
-        public override void Update()
+        public override void Move()
         {
-            base.Update();
             Vector2 target = Vector2.Zero;
             Dictionary<Keys, Vector2> directionalVectors = new Dictionary<Keys, Vector2>()
             {
-                { Keys.W, new Vector2(0, -1) },
                 { Keys.A, new Vector2(-1, 0) },
-                { Keys.S, new Vector2(0, 1) },
                 { Keys.D, new Vector2(1, 0) }
             };
-            foreach (Keys x in new Keys[] { Keys.W, Keys.A, Keys.S, Keys.D})
+            foreach (Keys x in new Keys[] { Keys.A, Keys.D })
             {
                 if (Input.inputs[x].isPressed)
                 {
@@ -45,8 +42,12 @@ namespace Skillbound
                 target *= speed;
             }
 
-            Point targetPoint = target.ToPoint();
-            rect.Location += targetPoint;
+            velocity += target;
+
+            if (Input.inputs[Keys.Space].active)
+            {
+                velocity.Y = -20;
+            }
         }
     }
 }
