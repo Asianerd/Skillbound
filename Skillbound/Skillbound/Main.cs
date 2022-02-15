@@ -49,6 +49,7 @@ namespace Skillbound
                 Keys.A,
                 Keys.S,
                 Keys.D,
+                Keys.Q,
                 Keys.Space
             });
 

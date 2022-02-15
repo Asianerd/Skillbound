@@ -38,17 +38,21 @@ namespace Skillbound
         public Texture2D sprite;
         public float speed = 10f;
         public Vector2 velocity = Vector2.Zero;
+        public bool onGround;
+        public GameValue jumpValue;
 
         public Entity(Texture2D _sprite, Rectangle _rect)
         {
             rect = _rect;
             sprite = _sprite;
+            jumpValue = new GameValue(0, 1, 1);
 
             collection.Add(this);
         }
 
         public virtual void Update()
         {
+            PhysicsChecks();
             Move();
             ApplyVelocity();
             ApplyFriction();
@@ -56,7 +60,12 @@ namespace Skillbound
 
         public virtual void Draw()
         {
-            Main.spriteBatch.Draw(sprite, rect, Map.CollideTiles(rect) ? Color.Red : Color.White);
+            Main.spriteBatch.Draw(sprite, rect, onGround ? Color.Red : Color.White);
+        }
+
+        public virtual void PhysicsChecks()
+        {
+            onGround = Map.CollideTiles(new Rectangle(rect.X, rect.Bottom, rect.Width, 20));
         }
 
         public virtual void Move()
@@ -66,10 +75,7 @@ namespace Skillbound
 
         public virtual void ApplyVelocity()
         {
-            /*velocity.Y += 0.01f;*/
             velocity.Y = Math.Clamp(velocity.Y + 1, -30, 30);
-            //velocity.Y += 1;
-
 
             Point targetPoint = new Point((int)velocity.X, (int)velocity.Y);
             Rectangle newRect = new Rectangle(targetPoint + rect.Location, rect.Size);
@@ -88,7 +94,7 @@ namespace Skillbound
                 if (!Map.CollideTiles(withoutY))
                 {
                     rect = withoutY;
-                    velocity.X = 0;
+                    //velocity.X = 0;
                 }
             }
 

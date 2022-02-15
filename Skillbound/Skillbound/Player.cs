@@ -18,11 +18,16 @@ namespace Skillbound
 
         public Player(Rectangle _rect, Texture2D _sprite) : base(_sprite, _rect)
         {
-
+            jumpValue.Max = 2;
         }
 
         public override void Move()
         {
+            if (onGround)
+            {
+                jumpValue.AffectValue(1f);
+            }
+
             Vector2 target = Vector2.Zero;
             Dictionary<Keys, Vector2> directionalVectors = new Dictionary<Keys, Vector2>()
             {
@@ -36,17 +41,36 @@ namespace Skillbound
                     target += directionalVectors[x];
                 }
             }
-            if (target.Length() > 0)
+            /*if (target.Length() > 0)
             {
                 target.Normalize();
                 target *= speed;
-            }
+            }*/
+            target *= speed;
 
             velocity += target;
 
-            if (Input.inputs[Keys.Space].active)
+            if (Input.inputs[Keys.Space].active && (jumpValue.I >= 1))
             {
                 velocity.Y = -20;
+                jumpValue.AffectValue(-1d);
+            }
+
+            if (Input.inputs[Keys.S].isPressed)
+            {
+                velocity.Y += 2;
+            }
+        }
+
+        public override void Update()
+        {
+            base.Update();
+
+            if (Input.inputs[Keys.Q].active)
+            {
+                Map.tiles.Add(new Map_objects.Tile(Map_objects.Tile.TileType.Default, new Rectangle(
+                    rect.X, rect.Bottom + 10, rect.Width, 40
+                    )));
             }
         }
     }

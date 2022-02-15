@@ -20,6 +20,15 @@ namespace Skillbound
             };
 
             Main.DrawEvent += DrawTiles;
+            Main.UpdateEvent += UpdateTiles;
+        }
+
+        public static void UpdateTiles()
+        {
+            foreach(Tile x in tiles)
+            {
+                x.Update();
+            }
         }
 
         public static void DrawTiles()
