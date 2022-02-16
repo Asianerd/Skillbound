@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Skillbound.Skills;
 
 namespace Skillbound
 {
@@ -82,6 +83,11 @@ namespace Skillbound
                         40
                         )));
                 }*/
+            }
+
+            if (Input.inputs[Keys.LeftShift].active)
+            {
+                Base_skill.skills[Base_skill.Skill.Dash].Execute();
             }
         }
     }

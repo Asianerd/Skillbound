@@ -93,7 +93,7 @@ namespace Skillbound
             for (int i = 0; i <= 10; i++)
             {
                 Rectangle withoutY = new Rectangle(new Point(
-                    (int)Lerp(rect.X, newRect.X, (i / 10f)),
+                    (int)GameValue.Lerp(rect.X, newRect.X, (i / 10f)),
                     rect.Y), newRect.Size);
                 if (!Map.CollideTiles(withoutY))
                 {
@@ -149,7 +149,7 @@ namespace Skillbound
             {
                 Rectangle withoutX = new Rectangle(new Point(
                     rect.X,
-                    (int)Lerp(rect.Y, newRect.Y, (i / 10f))
+                    (int)GameValue.Lerp(rect.Y, newRect.Y, (i / 10f))
                     ), newRect.Size);
                 if (!Map.CollideTiles(withoutX))
                 {
@@ -161,11 +161,6 @@ namespace Skillbound
         public virtual void ApplyFriction()
         {
             velocity.X *= 0.5f;
-        }
-
-        public static float Lerp(float start, float end, float amount)
-        {
-            return start + ((end - start) * amount);
         }
     }
 }

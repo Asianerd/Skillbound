@@ -76,5 +76,12 @@ namespace Skillbound
         {
             Min *= _percent; // Percent = 0f to 1f
         }
+
+        #region Utility functions
+        public static float Lerp(float start, float end, float amount)
+        {
+            return start + ((end - start) * amount);
+        }
+        #endregion
     }
 }

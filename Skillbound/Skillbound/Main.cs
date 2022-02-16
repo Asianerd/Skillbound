@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Skillbound.Map_objects;
+using Skillbound.Skills;
 
 namespace Skillbound
 {
@@ -13,7 +14,7 @@ namespace Skillbound
     {
         public static GraphicsDeviceManager Graphics;
         public static SpriteBatch spriteBatch;
-        public static Vector2 screenSize = new Vector2(1920, 1080);
+        public static Vector2 screenSize = new Vector2(600, 1080);
 
         public delegate void GameEvents();
         public static GameEvents UpdateEvent;
@@ -26,7 +27,7 @@ namespace Skillbound
 
             Graphics.PreferredBackBufferWidth = (int)screenSize.X;
             Graphics.PreferredBackBufferHeight = (int)screenSize.Y;
-            Graphics.IsFullScreen = true;
+            //Graphics.IsFullScreen = true;
             IsMouseVisible = true;
         }
 
@@ -60,8 +61,11 @@ namespace Skillbound
                 Keys.X,
                 Keys.C,
                 Keys.V,
-                Keys.Space
+                Keys.Space,
+                Keys.LeftShift
             });
+
+            Base_skill.Initialize();
 
             Entity.Initialize();
             Player.Initialize(Content.Load<Texture2D>("Player/body"));
