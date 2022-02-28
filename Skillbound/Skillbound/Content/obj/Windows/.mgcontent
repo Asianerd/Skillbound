@@ -13,9 +13,29 @@
     <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/7.png</File>
     <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/8.png</File>
     <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/default/9.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/1.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/2.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/3.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/4.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/5.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/6.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/7.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/8.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/9.png</File>
     <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Player/body.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/darkOverlay.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

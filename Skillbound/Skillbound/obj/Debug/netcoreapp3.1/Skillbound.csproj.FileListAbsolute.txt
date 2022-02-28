@@ -56,3 +56,14 @@ D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\
 D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\textures\default\7.xnb
 D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\textures\default\8.xnb
 D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\textures\default\9.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\1.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\2.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\3.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\4.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\5.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\6.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\7.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\8.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\9.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\darkOverlay.xnb

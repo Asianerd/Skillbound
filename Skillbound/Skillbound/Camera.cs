@@ -16,6 +16,16 @@ namespace Skillbound
             Main.UpdateEvent += Instance.Update;
         }
 
+        public static Vector2 ScreenToWorld(Vector2 pos)
+        {
+            return pos - Instance.offset;
+        }
+
+        public static Point ScreenToWorld(Point pos)
+        {
+            return pos - Instance.offset.ToPoint();
+        }
+
         public Vector2 position;
         public Vector2 target;
         public float amount = 0.2f;

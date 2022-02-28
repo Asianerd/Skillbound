@@ -26,9 +26,9 @@ namespace Skillbound.Skills
             }
         }
 
-        string name;
-        float energyUsage;
-        GameValue cooldown;
+        public string name;
+        public float energyUsage;
+        public GameValue cooldown;
 
         public Base_skill(string _name, float _energyUsage, GameValue _cooldown)
         {

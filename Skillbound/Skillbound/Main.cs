@@ -12,9 +12,11 @@ namespace Skillbound
 {
     public class Main : Game
     {
+        public static Main Instance;
+
         public static GraphicsDeviceManager Graphics;
         public static SpriteBatch spriteBatch;
-        public static Vector2 screenSize = new Vector2(600, 1080);
+        public static Vector2 screenSize = new Vector2(1920, 1080);
 
         public delegate void GameEvents();
         public static GameEvents UpdateEvent;
@@ -22,12 +24,14 @@ namespace Skillbound
 
         public Main()
         {
+            Instance = this;
+
             Graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
             Graphics.PreferredBackBufferWidth = (int)screenSize.X;
             Graphics.PreferredBackBufferHeight = (int)screenSize.Y;
-            //Graphics.IsFullScreen = true;
+            Graphics.IsFullScreen = screenSize == new Vector2(1920, 1080);
             IsMouseVisible = true;
         }
 
@@ -47,29 +51,45 @@ namespace Skillbound
 
             Input.Initialize(new List<Keys>()
             {
-                Keys.W,
                 Keys.A,
-                Keys.S,
+                Keys.B,
+                Keys.C,
                 Keys.D,
-                Keys.Q,
                 Keys.E,
-                Keys.R,
-                Keys.T,
                 Keys.F,
                 Keys.G,
-                Keys.Z,
-                Keys.X,
-                Keys.C,
+                Keys.H,
+                Keys.I,
+                Keys.J,
+                Keys.K,
+                Keys.L,
+                Keys.M,
+                Keys.N,
+                Keys.O,
+                Keys.P,
+                Keys.Q,
+                Keys.R,
+                Keys.S,
+                Keys.T,
+                Keys.U,
                 Keys.V,
+                Keys.W,
+                Keys.X,
+                Keys.Y,
+                Keys.Z,
                 Keys.Space,
-                Keys.LeftShift
-            });
+                Keys.LeftShift,
+                Keys.Enter,
+                Keys.Escape
+            }); // Dont check all the keys, only the ones we need
 
-            Base_skill.Initialize();
+            UI.Initialize();
 
             Entity.Initialize();
             Player.Initialize(Content.Load<Texture2D>("Player/body"));
             Camera.Initialize(); // Must be init after player
+
+            Base_skill.Initialize();
 
             base.Initialize();
         }
@@ -81,10 +101,11 @@ namespace Skillbound
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.F4))
                 Exit();
 
-            if(UpdateEvent != null)
+            UI.Instance.Update();
+            if (UpdateEvent != null)
             {
                 UpdateEvent();
             }
@@ -99,12 +120,15 @@ namespace Skillbound
             Matrix cameraOffset = Matrix.CreateTranslation(new Vector3(Camera.Instance.offset, 0f));
             spriteBatch.Begin(
                 samplerState: SamplerState.PointClamp,
-                transformMatrix:cameraOffset
+                transformMatrix: cameraOffset
                 );
             if (DrawEvent != null)
             {
                 DrawEvent();
             }
+            spriteBatch.End();
+            spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            UI.Instance.Draw();
             spriteBatch.End();
 
             base.Draw(gameTime);

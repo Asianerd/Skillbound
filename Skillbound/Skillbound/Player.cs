@@ -19,6 +19,7 @@ namespace Skillbound
 
         public Player(Rectangle _rect, Texture2D _sprite) : base(_sprite, _rect)
         {
+            rect.Location = Map.spawnPoints[0].ToPoint();
             jumpValue.Max = 2;
         }
 
@@ -69,6 +70,16 @@ namespace Skillbound
         {
             base.Update();
 
+            ExecuteSkills();
+        }
+
+        public void ExecuteSkills()
+        {
+            if(!UI.useControls)
+            {
+                return;
+            }
+
             if (Input.inputs[Keys.Q].active)
             {
                 Map.tiles.Add(new Map_objects.Tile(new Rectangle(
@@ -83,6 +94,13 @@ namespace Skillbound
                         40
                         )));
                 }*/
+            }
+
+            if (Input.mouseInputs[Input.MouseButton.Left].active)
+            {
+                Point pos = Camera.ScreenToWorld(Input.mouseState.Position);
+                velocity.Y = 0;
+                rect.Location = pos;
             }
 
             if (Input.inputs[Keys.LeftShift].active)

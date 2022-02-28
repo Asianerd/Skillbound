@@ -22,7 +22,14 @@ namespace Skillbound.Skills
             {
                 return;
             }
+
+            if (cooldown.Percent() < 1f)
+            {
+                return;
+            }
+
             base.Execute();
+
             dashActivated = true;
             dashValue.AffectValue(0f);
 
@@ -32,7 +39,8 @@ namespace Skillbound.Skills
         public override void Update()
         {
             base.Update();
-            if(dashActivated)
+
+            if (dashActivated)
             {
                 dashValue.Regenerate();
                 if(dashValue.Percent() == 1f)

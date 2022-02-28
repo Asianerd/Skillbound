@@ -17,7 +17,8 @@ namespace Skillbound.Map_objects
 
         public enum TileType
         {
-            Default
+            Default,
+            Other
         }
 
         public static int pixel = 16;
