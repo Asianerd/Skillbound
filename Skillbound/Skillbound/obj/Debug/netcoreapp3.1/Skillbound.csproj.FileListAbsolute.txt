@@ -67,3 +67,13 @@ D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\
 D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\8.xnb
 D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\Map\other\9.xnb
 D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\darkOverlay.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\chatFont.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\chat_9slice\1.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\chat_9slice\2.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\chat_9slice\3.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\chat_9slice\4.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\chat_9slice\5.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\chat_9slice\6.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\chat_9slice\7.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\chat_9slice\8.xnb
+D:\GithubRepos\Skillbound\Skillbound\Skillbound\bin\Debug\netcoreapp3.1\Content\UI\Chat\chat_9slice\9.xnb

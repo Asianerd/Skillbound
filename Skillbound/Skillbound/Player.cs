@@ -32,6 +32,11 @@ namespace Skillbound
                 jumpValue.AffectValue(1f);
             }
 
+            if(!UI.useControls)
+            {
+                return;
+            }
+
             Vector2 target = Vector2.Zero;
             Dictionary<Keys, Vector2> directionalVectors = new Dictionary<Keys, Vector2>()
             {

@@ -23,9 +23,29 @@
     <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/8.png</File>
     <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Map/other/9.png</File>
     <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/Player/body.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/chat_9slice/1.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/chat_9slice/2.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/chat_9slice/3.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/chat_9slice/4.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/chat_9slice/5.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/chat_9slice/6.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/chat_9slice/7.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/chat_9slice/8.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/chat_9slice/9.png</File>
+    <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/chatFont.spritefont</File>
     <File>D:/GithubRepos/Skillbound/Skillbound/Skillbound/Content/UI/Chat/darkOverlay.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -80,7 +80,27 @@ namespace Skillbound
                 Keys.Space,
                 Keys.LeftShift,
                 Keys.Enter,
-                Keys.Escape
+                Keys.Escape,
+                Keys.OemBackslash,
+                Keys.Back,
+                Keys.D1,
+                Keys.D2,
+                Keys.D3,
+                Keys.D4,
+                Keys.D5,
+                Keys.D6,
+                Keys.D7,
+                Keys.D8,
+                Keys.D9,
+                Keys.D0,
+                Keys.OemMinus,
+                Keys.OemPlus,
+                Keys.OemOpenBrackets,
+                Keys.OemCloseBrackets,
+                Keys.OemSemicolon,
+                Keys.OemQuotes,
+                Keys.OemPeriod,
+                Keys.OemQuestion
             }); // Dont check all the keys, only the ones we need
 
             UI.Initialize();
